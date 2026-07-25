@@ -607,7 +607,7 @@ export default function App() {
             {([1, 2] as const).map((p) => (
               <button
                 key={p}
-                onClick={() => setActivePage(p)}
+                onClick={() => { setActivePage(p); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                 style={{
                   fontFamily: 'var(--font-body)',
@@ -657,7 +657,7 @@ export default function App() {
               Dibuat dengan tulus · {new Date().getFullYear()}
             </p>
             <button
-              onClick={() => setActivePage(activePage === 1 ? 2 : 1)}
+              onClick={() => { setActivePage(activePage === 1 ? 2 : 1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
               className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg transition-all duration-200 hover:opacity-80"
               style={{
                 fontFamily: 'var(--font-body)',
