@@ -654,7 +654,7 @@ export default function App() {
               className="text-xs"
               style={{ fontFamily: 'var(--font-body)', color: '#a89a8a' }}
             >
-              Dibuat dengan tulus · {new Date().getFullYear()}
+              Dibuat oleh Willy Andha · {new Date().getFullYear()}
             </p>
             <button
               onClick={() => { setActivePage(activePage === 1 ? 2 : 1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
