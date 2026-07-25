@@ -1,0 +1,10 @@
+{
+  "fonts": [
+    {"family":"Playfair Display","style":"Regular"},
+    {"family":"Playfair Display","style":"Bold"},
+    {"family":"Playfair Display","style":"Italic"},
+    {"family":"DM Sans","style":"Regular"},
+    {"family":"DM Sans","style":"Medium"},
+    {"family":"DM Sans","style":"SemiBold"}
+  ]
+}

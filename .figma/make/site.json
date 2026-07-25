@@ -1,0 +1,10 @@
+{
+  "description": "This personal introduction app offers a stylish and engaging platform for casual dating, showcasing user profiles with key facts, personality traits, and relationship vibes.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
