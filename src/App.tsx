@@ -4,53 +4,55 @@ import { useState } from 'react'
 
 const quickFacts = [
   { label: 'Nama Panggilan', value: 'udah disebut ya 😄' },
-  { label: 'Usia / Domisili', value: '31 th / Bogor' },
-  { label: 'Kesibukan', value: 'IT di Faskes' },
+  { label: 'Usia / Domisili', value: '31 th / Gunung Putri, Bogor' },
+  { label: 'Kesibukan', value: 'IT di Puskesmas Jakarta' },
   { label: 'Zodiak / MBTI', value: 'ISTJ' },
+  { label: 'Tinggi', value: '172 cm' },
+  { label: 'Berat Terakhir', value: '74 kg' },
 ]
 
 const traits = [
   {
     icon: '🌿',
     title: 'Sabar & Kalem',
-    desc: 'Alhamdulillah bukan orang yang gampang kesulut emosi. Kalau ada masalah, lebih milih tenang dulu baru mikir. Daripada langsung marah, yang ada perang besar wkwk.',
+    desc: 'Alhamdulillah bukan orang yang gampang kesulut emosi. Kalau ada masalah, lebih milih tenang dulu baru mikir. Daripada langsung marah, yang ada perang besar.',
   },
   {
     icon: '👂',
     title: 'Pendengar yang Baik',
-    desc: 'Lebih suka merhatiin dan nemenin. Walau kadang masih belajar buat lebih peka sama kode-kode emosi.',
+    desc: 'Lebih suka merhatiin dan nemenin. Walau kadang masih belajar buat lebih peka sama kode-kode emosi dari cewek.',
   },
   {
     icon: '🪞',
     title: 'Apa Adanya',
-    desc: 'Nggak suka pura-pura/jaim. Kalau sayang ya bilang/ditunjukin lewat perhatian kecil dan tindakan nyata, bukan kata-kata doang.',
+    desc: 'Karena aku introvert, caraku recharge energi mungkin terkesan menarik diri. Tapi itu maksudnya aku butuh ruang sendiri dan bukan berarti aku nggak peduli.',
   },
   {
     icon: '🏡',
     title: 'Agak Rumahan',
-    desc: 'Lebih suka suasana yang tenang dan nyaman ketimbang tempat yang terlalu berisik dan ramai. Alhamdulillah bukan perokok juga hehe.',
+    desc: 'Lebih suka suasana yang tenang dan nyaman ketimbang tempat yang terlalu berisik dan ramai. Bukan orang yang suka nongkrong, Alhamdulillah bukan perokok.',
   },
 ]
 
 const hobbies = [
-  { icon: '🎮', label: 'Nge-game', desc: 'Kalo mau main bareng, ayooo!' },
-  { icon: '💻', label: 'Ngoding', desc: 'Lagi nyoba bikin sistem yang bisa jadi cuan' },
-  { icon: '⚽', label: 'Nonton Bola', desc: 'Khususnya Man Utd & Timnas Indonesia' },
-  { icon: '🏋️', label: 'Nge-gym', desc: 'Biar nggak gampang tumbang 😄' },
-  { icon: '🎬', label: 'Nonton Film', desc: 'Bioskop atau Netflix santai' },
-  { icon: '🚶', label: 'Jalan-jalan', desc: 'Plesiran santai tanpa tujuan' },
-  { icon: '✍️', label: 'Nulis Cerita', desc: 'Pengen jadi penulis fantasi kayak Tolkien' },
+  { icon: '🎮', label: 'Nge-game', desc: 'Bisa nemenin kamu main apa aja. Kalo mau main bareng, ayooo!' },
+  { icon: '💻', label: 'Ngoding', desc: 'Dari dulu suka aja bikin website kecil-kecilan. Sekarang lagi nyoba bikin sistem yang bisa jadi cuan' },
+  { icon: '⚽', label: 'Nonton Bola', desc: 'Khususnya Man Utd & Timnas Indonesia. Aku fans MU dari zaman Beckham masih jomblo' },
+  { icon: '🏋️', label: 'Nge-gym', desc: 'Biar nggak gampang tumbang. Badannya masih belum berotot sii 😄' },
+  { icon: '🎬', label: 'Nonton Film', desc: 'Bioskop atau Netflix santai. Suka genre fantasi sama sci-fi' },
+  { icon: '🚶', label: 'Jalan-jalan', desc: 'Plesiran santai tanpa tujuan. Pernah sendirian motoran sampe Ciletuh karena gabut haha.' },
+  { icon: '✍️', label: 'Nulis Cerita', desc: 'Pengen jadi penulis fantasi kayak J.R.R. Tolkien. Ini yang bikin aku suka sama dunia fantasi. Bukan Dufan, ya' },
   { icon: '📚', label: 'Baca Buku', desc: 'Sekarang lagi suka baca buku non-fiksi. Kalo dulu Novel & manga jadi favorit' },
 ]
 
 const likes = [
-  'Perhatian tulus dan hal-hal kecil yang konsisten',
+  'Perhatian tulus dan bisa menghargai usaha dan keberadaanku',
   'Waktu berkualitas saat lagi bareng (bisa ngobrol lama atau cerita keseharian)',
   'Komunikasi yang jelas, langsung to the point dan ga jaim, tanpa harus main tebak-tebakan pikiran',
 ]
 
 const dislikes = [
-  'Diabaikan atau didiamkan berlama-lama tanpa kejelasan',
+  'Ngambek atau didiamkan berlama-lama tanpa kejelasan',
   'Drama yang sebenernya nggak perlu diperbesar',
   'Suasana atau tempat yang terlalu ramai dan bikin pusing',
 ]
@@ -66,7 +68,7 @@ const relationshipCards = [
     label: 'Suasana',
     icon: '🏠',
     title: 'Rumah & Tempat Pulang',
-    desc: 'Pengen hubungan yang jadi "rumah" sekaligus tempat pulang paling aman — bisa cerita apa aja tanpa takut dihakimi.',
+    desc: 'Pengen hubungan yang jadi "rumah" sekaligus tempat pulang paling aman dan tenang — sekaligus berkomunikasi secara dewasa dan jelas tanpa kode-kode.',
   },
   {
     label: 'Batasan',
@@ -80,14 +82,14 @@ const dateOptions = [
   {
     letter: 'A',
     title: 'Ngopi Santai',
-    desc: 'Ngopi di tempat yang tenang, lanjut ngobrol ngalur-ngidul tentang diri masing-masing.',
+    desc: 'Ngopi di kafe yang tenang, lanjut ngobrol ngalur-ngidul tentang diri masing-masing.',
     tags: ['Santai', 'Ngobrol', 'Tenang'],
   },
   {
     letter: 'B',
-    title: 'Aktivitas Ringan',
-    desc: 'Main ke museum atau jalan-jalan santai sore hari sambil nikmatin suasana.',
-    tags: ['Sore', 'Jalan', 'Santai'],
+    title: 'Movie Date',
+    desc: 'Nonton film yang lagi rame di bioskop. Setelah itu ngobrol santai.',
+    tags: ['Sore', 'Nonton', 'Santai'],
   },
   {
     letter: 'C',
@@ -103,8 +105,8 @@ const commPrefs = [
     icon: '💬',
     items: [
       'Lebih suka chat untuk kabar harian',
-      'Senang banget kalau bisa video call sebentar sebelum tidur',
-      'Balas pesan kalau lagi bisa dan kondisi memungkinkan di antara jam sibuk',
+      'Seneng banget kalau bisa video call-an sebelum tidur. Ga harus ngobrol berat, tatapan muka aja udah bikin seneng',
+      'Saat lagi sibuk aku pastiin ngabarin dan ngasih estimasi waktunya',
     ],
   },
   {
@@ -193,6 +195,18 @@ function Page1() {
       {/* Section 1 – Quick Facts */}
       <section>
         <SectionLabel>§ 01 — Fakta Singkat</SectionLabel>
+
+        {/* Abstract bio */}
+        <p
+          className="text-sm leading-relaxed mb-5 italic"
+          style={{ fontFamily: 'var(--font-body)', color: '#7a6a5a', borderLeft: '3px solid #c4622d', paddingLeft: '1rem' }}
+        >
+          Aku tumbuh dari lingkungan yang mengajarkan bahwa segala sesuatu diraih dengan usaha sendiri — bukan warisan dan jalan pintas.
+          Terbiasa jadi sandaran bagi yang lebih muda, namun tetap punya ruang untuk bermimpi.
+          Di titik ini, sedang mencari seseorang yang sefrekuensi: yang bisa diajak tumbuh bersama,
+          membangun dari hal-hal sederhana, dan saling menguatkan dalam diam maupun dalam bicara.
+        </p>
+
         <div className="grid grid-cols-2 gap-3">
           {quickFacts.map((f) => (
             <div
@@ -598,7 +612,7 @@ export default function App() {
               className="text-base italic"
               style={{ fontFamily: 'var(--font-display)', color: '#a89a8a' }}
             >
-              Ini CV perkenalan, bukan CV kerja, ya :D
+              Ini CV perkenalan, bukan CV kerja :D
             </p>
           </div>
 
@@ -654,7 +668,7 @@ export default function App() {
               className="text-xs"
               style={{ fontFamily: 'var(--font-body)', color: '#a89a8a' }}
             >
-              Dibuat dengan tulus · {new Date().getFullYear()}
+              Dibuat oleh Willy Andha · {new Date().getFullYear()}
             </p>
             <button
               onClick={() => { setActivePage(activePage === 1 ? 2 : 1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
