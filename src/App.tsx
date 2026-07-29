@@ -68,7 +68,7 @@ const relationshipCards = [
     label: 'Suasana',
     icon: '🏠',
     title: 'Rumah & Tempat Pulang',
-    desc: 'Pengen hubungan yang jadi "rumah" sekaligus tempat pulang paling aman dan tenang — sekaligus berkomunikasi secara dewasa dan jelas tanpa kode-kode.',
+    desc: 'Pengen hubungan yang jadi "rumah" sekaligus tempat pulang paling aman dan tenang — sekaligus teman berbagi cerita tanpa harus dihakimi.',
   },
   {
     label: 'Batasan',
