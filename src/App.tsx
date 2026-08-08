@@ -1,4 +1,10 @@
 import { useState } from 'react'
+import foto1 from './images/Foto1.jpeg'
+import foto2 from './images/Foto2.jpeg'
+import foto3 from './images/Foto3.jpeg'
+import foto4 from './images/Foto4.jpeg'
+
+const myPhotos = [foto2, foto3, foto1, foto4]
 
 // ─── Data ──────────────────────────────────────────────────────────────────
 
@@ -136,6 +142,52 @@ const icebreakers = [
 ]
 
 // ─── Sub-components ────────────────────────────────────────────────────────
+
+function PhotoCarousel({ photos }: { photos: string[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const next = () => setCurrentIndex((i) => (i + 1) % photos.length)
+  const prev = () => setCurrentIndex((i) => (i - 1 + photos.length) % photos.length)
+
+  return (
+    <div className="relative rounded-xl overflow-hidden shadow-lg" style={{ border: '1px solid #ddd0c0', background: '#faf6f0' }}>
+      <div className="aspect-[4/5] sm:aspect-square relative group">
+        <img
+          src={photos[currentIndex]}
+          alt={`Foto ${currentIndex + 1}`}
+          className="w-full h-full object-cover transition-opacity duration-300"
+        />
+
+        {/* Navigation buttons */}
+        <button
+          onClick={prev}
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full text-white cursor-pointer transition opacity-0 group-hover:opacity-100 hover:bg-black/50"
+          style={{ background: 'rgba(0,0,0,0.3)', border: 'none' }}
+        >
+          ❮
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full text-white cursor-pointer transition opacity-0 group-hover:opacity-100 hover:bg-black/50"
+          style={{ background: 'rgba(0,0,0,0.3)', border: 'none' }}
+        >
+          ❯
+        </button>
+
+        {/* Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
+          {photos.map((_, i) => (
+            <div
+              key={i}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-white w-4' : 'bg-white/50 w-1.5'
+                }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -552,6 +604,20 @@ function Page2() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Section 9 – The Reveal */}
+      <section>
+        <SectionLabel>§ 09 — Sesi Perkenalan 📸</SectionLabel>
+        <div className="max-w-sm mx-auto">
+          <p
+            className="text-center text-sm leading-relaxed italic mb-6"
+            style={{ fontFamily: 'var(--font-body)', color: '#7a6a5a' }}
+          >
+            "Terima kasih sudah meluangkan waktu membaca sampai sejauh ini. Salam kenal, ini aku!"
+          </p>
+          <PhotoCarousel photos={myPhotos} />
         </div>
       </section>
     </div>
